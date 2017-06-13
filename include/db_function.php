@@ -1,5 +1,11 @@
 <?php 
 require_once 'include/db_connection.php';
+//db_connection contains database config information
+
+// function to fetch names of the contacts stored in the database
+//input- none
+//output- id, first name and last name of the stored contacts ordered by first name
+//calling method- list.php
 	function getNames(){
 		global $connection;
 		$query = "SELECT id,first_name,last_name from Contact ORDER BY first_name";
@@ -17,7 +23,10 @@ require_once 'include/db_connection.php';
 		else return false;
 
 	}
-
+//function to fetch detials of the select
+//input- user id
+//output- name (first and last) and the phone number stored in the database.
+//calling method- details.php
 	function getInfoById($id){
 		global $connection;
 		$query = "SELECT * from Contact where id = '{$id}'";
@@ -47,7 +56,10 @@ require_once 'include/db_connection.php';
 			return false;
 		} 
 	}
-
+//function to save the generated OTP into the database.
+//input- number of the stored contact, the generated otp
+//output- success message or a false value to be processed by the calling function
+//calling method - send.php
 	function saveOtp($to, $otp){
 		global $connection;
 		$query = "INSERT into OTP(";
@@ -60,7 +72,10 @@ require_once 'include/db_connection.php';
 		else
 			return false;
 	}
-
+//function to fetch the otp history from the database after performing an equijoin on the two tables
+//input- none
+//output- rows containing id, name(first and last), otp sent to the number, timestap, ordered by timestamp in descending order
+//calling method - history.php
 	function getOtpHistory(){
 		global $connection;
 		$query = "SELECT Contact.*, OTP.* FROM Contact, OTP WHERE Contact.phone_number = OTP.number ORDER BY OTP.timestamp desc";

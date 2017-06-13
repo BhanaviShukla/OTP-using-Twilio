@@ -24,7 +24,7 @@
     </div>
   </div>
 </nav>
-
+<!--to display the user information-->
 <div class="container">
     <h4>Name: </h4>
     <p id = "name"></p>
@@ -37,7 +37,7 @@
     <div class="modal fade" id="compose" role="dialog">
         <div class="modal-dialog">
         
-            <!-- Modal content-->
+            <!-- send otp modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>

@@ -1,11 +1,11 @@
 $(document).ready(function() {
+    //function to parse the uri segment and get the value of the parameter corresponding to the passed tag name.
     function getQueryStringValue (key) {  
     return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
-    }  
-
-// Would write the value of the QueryString-variable called name to the console  
+    }   
     var gid = getQueryStringValue("id");
     var numb;
+    //post request to details.php for fetching the contact info based on the id parsed from the url;
     $.ajax({
             type: "Post",
             url: "./details.php",
@@ -22,6 +22,8 @@ $(document).ready(function() {
                 $("#number").html(numb);
             }
     }); 
+
+    //post request to send the otp using twilio and save the otp history using send.php on click of the send button
     $('#postMsg').click(function(){
         var msg = document.getElementById('msg').textContent;
         console.log(msg);

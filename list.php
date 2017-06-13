@@ -1,10 +1,10 @@
 <?php
 require_once 'include/db_function.php';
- 
+ //calling js file- ajax.js
 // json response array
 $response = array("error" => FALSE);
 
-// get the user by email and password
+// get the stored contacts' first name and last name
 $user = getNames();
 
 if ($user) {

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    //post request to fetch the user data using the id passed as uri segment. posts to list.php; formats the response and writes it to the document.
     $.ajax({
             type: "Post",
             url: "./list.php",
@@ -18,7 +19,7 @@ $(document).ready(function() {
                 $("#result").html(result);
             }
     }); 
-
+    //post request to fetch the otp history. calls history.php; formats the response and writes it to the document.
     $.ajax({
             type: "Post",
             url: "./history.php",

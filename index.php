@@ -11,7 +11,7 @@
 
 </head>
 <body>
-
+<!--navigation bar-->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -32,11 +32,13 @@
 </nav>
 
 <div class="tab-content">
+    <!--div to open the contacts'list'-->
     <div id="contacts" class="tab-pane fade in active">
       <h3>Contacts</h3>
       <div id="result"></div>
       <p> Only the first one works. The number which was given to me, required OTP to get verified. Hence didn't use it. Instead I can send you screenshots of the OTP that I got on my number.
     </div>
+    <!--div to open the otp history-->
     <div id ="kuchhto" class="tab-pane fade">
       <h3>History</h3>
       <div id = "history"></div>
