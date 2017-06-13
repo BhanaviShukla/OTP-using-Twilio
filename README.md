@@ -12,3 +12,6 @@ list.php calls appropriate function from db_function to get the list of saved co
 details.php calls the function to display a particular contact using ID passed from the webpage
 send.php calls the function to send the OTP using TWILIO and also to save it to the database
 history.php calls the function to fetch the sent OTP history from the database.
+
+
+Read "OTP using Twilio.pdf" for more information
